@@ -10,24 +10,26 @@ namespace PPM.Main.PPM.UI
     {
         Console.WriteLine("             ==========Hello Prolifics employee==========");
         Console.WriteLine("");
-        Console.Write("Enter \"1\" for adding project               ");
+        Console.Write("Enter \"1\" for adding project                                   ");
         Console.WriteLine("Enter \"2\" to show all projects");
         Console.WriteLine("");
-        Console.Write("Enter \"3\" for adding Employee              ");
+        Console.Write("Enter \"3\" for adding Employee                                  ");
         Console.WriteLine("Enter \"4\" for viewing all Employees");
         Console.WriteLine("");
-        Console.Write("Enter \"5\" for adding Role                  ");
+        Console.Write("Enter \"5\" for adding Role                                      ");
         Console.WriteLine("Enter \"6\" for viewing all Roles");
         Console.WriteLine("");
-        Console.Write("Enter \"7\" for searching project            ");
+        Console.Write("Enter \"7\" for searching project                                ");
         Console.WriteLine("Enter \"8\" for searching project through id");
         Console.WriteLine("");
-        Console.Write("Enter \"9\" to add employees to project      ");
+        Console.Write("Enter \"9\" to add employees to project                          ");
         Console.WriteLine("Enter \"10\" to View projects with employees");
         Console.WriteLine("");
-        Console.WriteLine("Enter \"11\" to delete employee from project");
+        Console.Write("Enter \"11\" to view employees in a particular project           ");
+        Console.WriteLine("Enter \"12\" to delete employee from project");
         Console.WriteLine("");
-        Console.WriteLine("                           Enter \"x\" to exit application");
+        Console.WriteLine("");
+        Console.WriteLine("                                        Enter \"x\" to exit application");
         ProjectManagement obj = new ProjectManagement();
         EmployeeManagement obj1 = new EmployeeManagement();
         RoleManagement objmain = new RoleManagement();
@@ -453,13 +455,20 @@ namespace PPM.Main.PPM.UI
                         Console.ReadLine();
                     break;
                 case "10":
-                    Console.WriteLine("Enter Project Id");
                     obj.Display();
                     Console.WriteLine("-------------------------------------------------------------------------------------");
                     Console.WriteLine("Enter any key to get to main menu");
                     Console.ReadLine();
                     break;
                 case "11":
+                    Console.WriteLine("Enter the id of the project");
+                    int readForId = Convert.ToInt32(Console.ReadLine());
+                    obj.DisplayEmployeesInProjectById(readForId);
+                    Console.WriteLine("-------------------------------------------------------------------------------------");
+                    Console.WriteLine("Enter any key to get to main menu");
+                    Console.ReadLine();
+                        break;
+                case "12":
                 try{
                     Console.WriteLine("Enter the Id of the project for which you want to delete employees");
                     int PROJId1 = Convert.ToInt32(Console.ReadLine());
@@ -493,27 +502,28 @@ namespace PPM.Main.PPM.UI
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("                          ======LIST======");
-            Console.WriteLine("");
-        Console.Write("Enter \"1\" for adding project               ");
-        Console.WriteLine("Enter \"2\" to show all projects");
-        Console.WriteLine("");
-        Console.Write("Enter \"3\" for adding Employee              ");
-        Console.WriteLine("Enter \"4\" for viewing all Employees");
-        Console.WriteLine("");
-        Console.Write("Enter \"5\" for adding Role                  ");
-        Console.WriteLine("Enter \"6\" for viewing all Roles");
-        Console.WriteLine("");
-        Console.Write("Enter \"7\" for searching project            ");
-        Console.WriteLine("Enter \"8\" for searching project through id");
-        Console.WriteLine("");
-        Console.Write("Enter \"9\" to add employees to project      ");
-        Console.WriteLine("Enter \"10\" to View projects with employees");
-        Console.WriteLine("");
-        Console.WriteLine("Enter \"11\" to delete employee from project");
-        Console.WriteLine("");
-        Console.WriteLine("                           Enter \"x\" to exit application");
-        read = Console.ReadLine();
+                Console.WriteLine("");
+                Console.Write("Enter \"1\" for adding project                                   ");
+                Console.WriteLine("Enter \"2\" to show all projects");
+                Console.WriteLine("");
+                Console.Write("Enter \"3\" for adding Employee                                  ");
+                Console.WriteLine("Enter \"4\" for viewing all Employees");
+                Console.WriteLine("");
+                Console.Write("Enter \"5\" for adding Role                                      ");
+                Console.WriteLine("Enter \"6\" for viewing all Roles");
+                Console.WriteLine("");
+                Console.Write("Enter \"7\" for searching project                                ");
+                Console.WriteLine("Enter \"8\" for searching project through id");
+                Console.WriteLine("");
+                Console.Write("Enter \"9\" to add employees to project                          ");
+                Console.WriteLine("Enter \"10\" to View projects with employees");
+                Console.WriteLine("");
+                Console.Write("Enter \"11\" to view employees in a particular project           ");
+                Console.WriteLine("Enter \"12\" to delete employee from project");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("                                        Enter \"x\" to exit application");
+                read = Console.ReadLine();
         }
     }
     }
