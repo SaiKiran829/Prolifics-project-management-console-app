@@ -68,7 +68,61 @@ public class Employee : IComparable<Employee>
         return this.roleId.CompareTo(other.roleId);
     }
 
-}
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(obj, null))
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool operator ==(Employee left, Employee right)
+        {
+            if (ReferenceEquals(left, null))
+            {
+                return ReferenceEquals(right, null);
+            }
+
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Employee left, Employee right)
+        {
+            return !(left == right);
+        }
+
+        public static bool operator <(Employee left, Employee right)
+        {
+            return ReferenceEquals(left, null) ? !ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+        }
+
+        public static bool operator <=(Employee left, Employee right)
+        {
+            return ReferenceEquals(left, null) || left.CompareTo(right) <= 0;
+        }
+
+        public static bool operator >(Employee left, Employee right)
+        {
+            return !ReferenceEquals(left, null) && left.CompareTo(right) > 0;
+        }
+
+        public static bool operator >=(Employee left, Employee right)
+        {
+            return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.CompareTo(right) >= 0;
+        }
+    }
 
 //Role class
 public class Role : IComparable<Role>
@@ -91,7 +145,61 @@ public class Role : IComparable<Role>
         return this.roleId.CompareTo(other.roleId);
     }
 
-}
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(obj, null))
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
+        }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool operator ==(Role left, Role right)
+        {
+            if (ReferenceEquals(left, null))
+            {
+                return ReferenceEquals(right, null);
+            }
+
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Role left, Role right)
+        {
+            return !(left == right);
+        }
+
+        public static bool operator <(Role left, Role right)
+        {
+            return ReferenceEquals(left, null) ? !ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+        }
+
+        public static bool operator <=(Role left, Role right)
+        {
+            return ReferenceEquals(left, null) || left.CompareTo(right) <= 0;
+        }
+
+        public static bool operator >(Role left, Role right)
+        {
+            return !ReferenceEquals(left, null) && left.CompareTo(right) > 0;
+        }
+
+        public static bool operator >=(Role left, Role right)
+        {
+            return ReferenceEquals(left, null) ? ReferenceEquals(right, null) : left.CompareTo(right) >= 0;
+        }
+    }
 
 
 }
