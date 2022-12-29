@@ -7,7 +7,7 @@ public class ProjectManagement
 {
         private static readonly List<Project> projects1 = new List<Project>();
         public List<Project> projects = projects1;
-        readonly EmployeeManagement obj1 = new EmployeeManagement();
+        EmployeeManagement obj1 = new EmployeeManagement();
 
     //Method for adding projects
     public void AddingProjects(Project project)
@@ -34,9 +34,6 @@ public class ProjectManagement
 
     public void Display()
     {
-
-          
-        
             for (int j = 0; j < projects.Count; j++)
             {
                 projects[j].employeeListfromEmployeeManagement.Sort();
@@ -44,7 +41,6 @@ public class ProjectManagement
                     Console.WriteLine("No employee in the project");
                 }
                 else{
-                    
                     Console.WriteLine("=====================================================================================");
                     Console.WriteLine("\nProject Name - "+projects[j].projectName+"\n");
                     Console.WriteLine("Below are the details of employees in this project");
@@ -55,6 +51,33 @@ public class ProjectManagement
                 }
             }}
     }
+
+    public void DisplayEmployeesInProjectById(int readingemployeeId)
+        {
+            for (int j = 0; j < projects.Count; j++)
+            {
+                projects[j].employeeListfromEmployeeManagement.Sort();
+                if (IfExist(readingemployeeId))
+                {
+                    if (readingemployeeId == projects[j].id)
+                    {
+                        Console.WriteLine("=====================================================================================");
+                        Console.WriteLine("\nProject Name - " + projects[j].projectName + "\n");
+                        Console.WriteLine("Below are the details of employees in this project");
+                        for (int i = 0; i < projects[j].employeeListfromEmployeeManagement.Count; i++)
+                        {
+                            Console.WriteLine("-------------------------------------------------------------------------------------");
+                            Console.WriteLine(projects[j].employeeListfromEmployeeManagement[i].employeefirstName + " [" + projects[j].employeeListfromEmployeeManagement[i].roleName + "]");
+                        }
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("No project found");
+                }
+            }
+        }
 
     public void EmployeeToProject(int pid,Employee ename){
         if(!obj1.IfExists(pid)){
